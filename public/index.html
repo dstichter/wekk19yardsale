@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="yardsale">
+  <head>
+    <meta charset="utf-8">
+    <title>Yard Sale</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+
+  </head>
+  <body>
+    <div class="row" ng-controller="yardsaleController">
+      <div class="col-md-6" ng-init="getSales()">
+        <ul>
+          <li ng-repeat="sale in yardsales">
+            {{sale.itemName}}<br>
+            {{sale.itemDescription}}<br>
+            {{sale.itemPrice}}<br>
+            {{sale.comments}}
+          </li>
+          <input type="text" ng-model="newComment">
+          <button type="button"ng-click="addComment()">New Comment</button>
+        </ul>
+        <input type="text" name='itemName' ng-model="newItem">
+        <input type="text" name='itemDescription' ng-model="newItem">
+        <input type="text" name='price' ng-model="newItem">
+        <button type="button"ng-click="addItem()">New Sale</button>
+      </div>
+        <div class='col-md-6'>
+          <input type="text" name='username' ng-model="newItem">Username</input>
+          <input type="text" name='password' ng-model="newItem">Password</input>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="controller.js"></script>
+
+  </body>
+</html>
